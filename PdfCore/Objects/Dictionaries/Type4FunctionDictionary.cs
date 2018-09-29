@@ -4,6 +4,6 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
 {
     public class Type4FunctionDictionary : FunctionDictionary
     {
-        public PdfStream Stream { get; set; }
+        public PdfStreamDictionary Stream { get; set; }
     }
 }

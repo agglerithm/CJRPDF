@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PdfCore;
-using PdfCore.Objects;
+﻿using PdfCore.Objects;
 
 namespace CJRPDF.PdfCore.Objects.Dictionaries
 {

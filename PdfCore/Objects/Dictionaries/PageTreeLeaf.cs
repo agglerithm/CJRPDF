@@ -23,15 +23,17 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
         public int Thumb { get; set; }
         [ObjectLabel("AA")]
         public string AdditionalActions { get; set; }
-        public PdfStream Metadata { get; set; }
+        public PdfStreamDictionary Metadata { get; set; }
         public PdfDictionary PieceInfo { get; set; }
         public object StructParents { get; set; }
         public int ID { get; set; }
-        public int PZ { get; set; }
+        [ObjectLabel("PZ")]
+        public int PreferredZoom { get; set; }
         public PdfDictionary SeparationInfo { get; set; }
         public bool TemplateInstantiated { get; set; }
         public PdfDictionary PresSteps { get; set; }
         public int UserUnit { get; set; }
-        public PdfDictionary VP { get; set; }
+        [ObjectLabel("VP")]
+        public PdfDictionary ViewPorts { get; set; }
     }
 }

@@ -9,6 +9,6 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
             Encoding = new EncodingDictionary();
         }
         public EncodingDictionary Encoding { get; set; }
-        public PdfStream ToUnicode { get; set; }
+        public PdfStreamDictionary ToUnicode { get; set; }
     }
 }

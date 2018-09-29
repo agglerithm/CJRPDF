@@ -77,7 +77,6 @@
     <Compile Include="Objects\PdfObject.cs" />
     <Compile Include="Objects\PdfObjectStream.cs" />
     <Compile Include="Objects\PdfReal.cs" />
-    <Compile Include="Objects\PdfStream.cs" />
     <Compile Include="Objects\PdfStringObject.cs" />
     <Compile Include="Objects\PdfTrailerDictionary.cs" />
     <Compile Include="PdfContentStream.cs" />

@@ -15,7 +15,7 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
         public string PageLayout { get; set; }
         public string PageMode { get; set; }
         public PdfDictionary AdditionalActions { get; set; }
-        public IndirectObject<PdfStream> Metadata { get; set; }
+        public IndirectObject<PdfStreamDictionary> Metadata { get; set; }
         public PdfDictionary StructTreeRoot { get; set; }
         public PdfArray OutputIntents { get; set; }
 

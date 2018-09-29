@@ -20,13 +20,13 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
         }
         public bool Interpolate { get; set; }
         public PdfArray Alternates { get; set; }
-        public PdfStream SMask { get; set; }
+        public PdfStreamDictionary SMask { get; set; }
         public int SMaskInData { get; set; }
         public string Name { get; set; }
         public int StructParent { get; set; }
         public byte[] ID { get; set; }
         public PdfDictionary OPI { get; set; }
-        public PdfStream Metadata { get; set; }
+        public PdfStreamDictionary Metadata { get; set; }
         public PdfDictionary OptionalContent { get; set; }
     }
 }

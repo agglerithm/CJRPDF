@@ -25,9 +25,9 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
         public int AvgWidth { get; set; }
         public int MaxWidth { get; set; }
         public int MissingWidth { get; set; }
-        public PdfStream FontFile { get; set; }
-        public PdfStream FontFile2 { get; set; }
-        public PdfStream FontFile3 { get; set; }
+        public PdfStreamDictionary FontFile { get; set; }
+        public PdfStreamDictionary FontFile2 { get; set; }
+        public PdfStreamDictionary FontFile3 { get; set; }
         public PdfStringObject CharSet { get; set; }
     }
 }
