@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Generic; 
 using System.Text;
 using PdfCore.Objects;
 
@@ -11,6 +11,12 @@ namespace CJRPDF.PdfCore.Objects
         {
             Value = new Dictionary<string, PdfObject>();
             ObjectType = PdfObjectType.Dictionary;
+        }
+
+        protected PdfDictionary(string type, string subtype = null):this()
+        {
+            Type = type;
+            Subtype = subtype; 
         }
         internal override string Print()
         {
@@ -28,15 +34,17 @@ namespace CJRPDF.PdfCore.Objects
             return sb.ToString();
         }
 
-        private void AddType(StringBuilder sb, string name, PdfNameObject type)
+        private void AddType(StringBuilder sb, string name, string val)
         {
-            if (type == null) return;
-            sb.Append(new PdfNameObject(name).Print());
-            sb.AppendLine(type.Print());
+            if (name == null || val == null) return;
+            var no = new PdfNameObject(name); 
+            sb.Append(no.Print());
+            var vo = new PdfNameObject(val);
+            sb.AppendLine(vo.Print());
         }
 
-        public PdfNameObject Type { get; set; }
-        public PdfNameObject Subtype { get; set; }
+        public string Type { get; set; }
+        public string Subtype { get; set; }
         private Dictionary<string, PdfObject> dictionary {
             get
             {
@@ -51,31 +59,4 @@ namespace CJRPDF.PdfCore.Objects
                 dictionary.Add(name, val);
         }
     }
-    
-    public class PdfTrailerDictionary : PdfDictionary
-    {
-        public PdfTrailerDictionary()
-        {
-            Type = new PdfNameObject("Trailer");
-        }
-        public int Size { get; set; }
-        public int? Prev { get; set; }
-        public PdfDictionary Root { get; set; }
-        public PdfDictionary Encrypt { get; set; }
-        public PdfDictionary Info { get; set; }
-        public PdfArray Id { get; set; }
-        internal override string Print()
-        {
-            Add("Size", new PdfInteger(Size));
-            if(Prev.HasValue)
-                Add("Prev", new PdfInteger(Prev.Value));
-            Add("Root", Root);
-            Add("Encrypt", Encrypt);
-            Add("Info", Info);
-            Add("ID", Id);
-            return base.Print();
-        }
-    }
-
-
 }

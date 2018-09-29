@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using CJRPDF.PdfCore.Objects;
+using PdfCore.Objects;
 
-namespace PdfCore.Objects
+namespace CJRPDF.PdfCore.Objects
 {
     public class PdfStream : PdfObject
     {
@@ -10,12 +10,12 @@ namespace PdfCore.Objects
         public PdfStream()
         {
             _dictionary = new PdfDictionary();
-            _dictionary.Add("Length", new PdfInteger(0));
         }
 
         internal override string Print()
         {
             var sb = new StringBuilder();
+            _dictionary.Add("Length", new PdfInteger(0));
             sb.AppendLine(_dictionary.Print());
             sb.AppendLine("stream");
             sb.AppendLine("endstream");

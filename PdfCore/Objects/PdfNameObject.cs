@@ -1,4 +1,6 @@
-﻿namespace PdfCore.Objects
+﻿using PdfCore.Objects;
+
+namespace CJRPDF.PdfCore.Objects
 {
     public class PdfNameObject:PdfObject
     { 

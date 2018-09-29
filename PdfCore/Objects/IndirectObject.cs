@@ -2,7 +2,7 @@
 
 namespace CJRPDF.PdfCore.Objects
 {
-    public class IndirectObject<T>:IIndirectObject where T: PdfObject
+    public class IndirectObject<T>:PdfObject, IIndirectObject where T: PdfObject
     {
         public IndirectObject(T pdfObject, int id, int genNum)
         {
@@ -16,7 +16,7 @@ namespace CJRPDF.PdfCore.Objects
         public int IndirectObjectNumber { get; set; }
         public IndirectObjectReference ObjectReference { get; set; }
         public int GenerationNumber { get; set; }
-        internal string Print()
+        internal override string Print()
         {
             return $"{IndirectObjectNumber} {GenerationNumber} obj \r\n {Object.Print()} \r\n endobj";
         }

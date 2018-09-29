@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using PdfCore;
+using PdfCore.Objects;
 
-namespace PdfCore.Objects
+namespace CJRPDF.PdfCore.Objects
 {
     public class PdfStringObject : PdfObject
     {
