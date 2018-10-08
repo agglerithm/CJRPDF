@@ -13,7 +13,7 @@ namespace CJRPDF.PdfCore
         public PdfFileBody Body { get; set; }
         public PdfCrossReferenceTable CrossReferenceTable { get; set; }
         public PdfFileTrailer Trailer { get; set; }
-        internal override string Print()
+        public override string Print()
         {
             throw new System.NotImplementedException();
         }

@@ -18,7 +18,7 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
             _ury = ury;
         }
 
-        internal override string Print()
+        public override string Print()
         {
             throw new NotImplementedException();
         }

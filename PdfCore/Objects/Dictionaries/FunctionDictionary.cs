@@ -7,5 +7,9 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
         public PdfNameObject FunctionType { get; set; }
         public PdfArray Domain { get; set; }
         public PdfArray Range { get; set; }
+
+        public FunctionDictionary() : base("Function", null)
+        {
+        }
     }
 }

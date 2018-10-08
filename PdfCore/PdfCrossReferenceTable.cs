@@ -19,7 +19,7 @@ namespace CJRPDF.PdfCore
 
         public int CurrentObjectNumber { get; set; }
 
-        internal override string Print()
+        public override string Print()
         {
             return _sections.PrintAll();
         }
@@ -37,7 +37,7 @@ namespace CJRPDF.PdfCore
             CurrentObjectNumber += subSection.EntryCount;
             _subSections.Add(subSection);
         }
-        internal override string Print()
+        public override string Print()
         { 
             return $"xref\r\n{_subSections.PrintAll()}";
         }
@@ -62,7 +62,7 @@ namespace CJRPDF.PdfCore
             CurrentObjectNumber ++;
             _entries.Add(entry);
         }
-        internal override string Print()
+        public override string Print()
         {
             var sb = new StringBuilder();
             sb.AppendLine($"{FirstObjectNumber} {EntryCount}");
@@ -83,7 +83,7 @@ namespace CJRPDF.PdfCore
         public string InUseKeyword { get { return IsFreeEntry ? "f":"n"; } }
         public bool IsFreeEntry { get; set; }
 
-        internal override string Print()
+        public override string Print()
         {
             return $"{ByteOffset.ToString("#########")} {GenerationNumber.ToString("#####")} {InUseKeyword} \r\n";
         }

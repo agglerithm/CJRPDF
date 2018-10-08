@@ -47,6 +47,7 @@
     <Compile Include="Objects\Dictionaries\CatalogDictionary.cs" />
     <Compile Include="Objects\Dictionaries\ColorSpaceDictionary.cs" />
     <Compile Include="Objects\Dictionaries\EncodingDictionary.cs" />
+    <Compile Include="Objects\Dictionaries\EncryptionDictionary.cs" />
     <Compile Include="Objects\Dictionaries\FontDescriptorDictionary.cs" />
     <Compile Include="Objects\Dictionaries\FontDictionary.cs" />
     <Compile Include="Objects\Dictionaries\FunctionDictionary.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Objects\Dictionaries\PatternDictionary.cs" />
     <Compile Include="Objects\Dictionaries\PdfCrossReferenceStreamDictionary.cs" />
     <Compile Include="Objects\Dictionaries\PdfFontDictionary.cs" />
+    <Compile Include="Objects\Dictionaries\PdfInvalidAssignmentException.cs" />
     <Compile Include="Objects\Dictionaries\PdfObjectStreamDictionary.cs" />
     <Compile Include="Objects\Dictionaries\PdfRectangle.cs" />
     <Compile Include="Objects\Dictionaries\PdfStreamDictionary.cs" />
@@ -70,7 +72,12 @@
     <Compile Include="Objects\IIndirectObject.cs" />
     <Compile Include="Objects\IndirectObject.cs" />
     <Compile Include="Objects\IndirectObjectReference.cs" />
+    <Compile Include="Objects\Layout\PdfColumnCollection.cs" />
+    <Compile Include="Objects\Layout\PdfTable.cs" />
+    <Compile Include="PdfColor.cs" />
+    <Compile Include="Objects\Layout\StructureElement.cs" />
     <Compile Include="Objects\PdfArray.cs" />
+    <Compile Include="Objects\PdfDateObject.cs" />
     <Compile Include="Objects\PdfDictionary.cs" />
     <Compile Include="Objects\PdfInteger.cs" />
     <Compile Include="Objects\PdfNameObject.cs" />
@@ -79,7 +86,6 @@
     <Compile Include="Objects\PdfReal.cs" />
     <Compile Include="Objects\PdfStringObject.cs" />
     <Compile Include="Objects\PdfTrailerDictionary.cs" />
-    <Compile Include="PdfContentStream.cs" />
     <Compile Include="PdfCrossReferenceStream.cs" />
     <Compile Include="PdfCrossReferenceTable.cs" />
     <Compile Include="PdfDocumentStructure.cs" />
@@ -87,8 +93,10 @@
     <Compile Include="PdfFileTrailer.cs" />
     <Compile Include="PdfObjectExtensions.cs" />
     <Compile Include="PdfPrintable.cs" />
+    <Compile Include="PdfUnion.cs" />
     <Compile Include="PfdFileStructure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\FlateDecode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

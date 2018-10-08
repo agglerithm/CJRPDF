@@ -5,42 +5,39 @@ using PdfCore.Objects;
 namespace CJRPDF.PdfCore.Objects
 {
     public class PdfDictionary : PdfObject
-    { 
-
-        public PdfDictionary()
+    {  
+        private PdfDictionary()
         {
             Value = new Dictionary<string, PdfObject>();
             ObjectType = PdfObjectType.Dictionary;
         }
 
-        protected PdfDictionary(string type, string subtype = null):this()
+        public PdfDictionary(string type, string subtype = null):this()
         {
             Type = type;
             Subtype = subtype; 
         }
-        internal override string Print()
+        public override string Print()
         {
             var sb = new StringBuilder();
-            sb.Append("<<"); 
-            AddType(sb, "Type", Type); 
-            AddType(sb, "Subtype", Subtype);
+            sb.AppendLine("<<"); 
+            AddName(sb, "Type", Type); 
+            AddName(sb, "Subtype", Subtype);
             foreach (var key in dictionary.Keys)
             {
                 sb.Append(new PdfNameObject(key).Print());
                 sb.AppendLine(dictionary[key].Print());
             }
 
-            sb.Append(">>");
+            sb.AppendLine(">>");
             return sb.ToString();
         }
 
-        private void AddType(StringBuilder sb, string name, string val)
+        private void AddName(StringBuilder sb, string name, string val)
         {
-            if (name == null || val == null) return;
-            var no = new PdfNameObject(name); 
-            sb.Append(no.Print());
-            var vo = new PdfNameObject(val);
-            sb.AppendLine(vo.Print());
+            if (name == null || val == null) return; 
+            sb.Append(PdfNameObject.Print(name)); 
+            sb.AppendLine(PdfNameObject.Print(val));
         }
 
         public string Type { get; set; }
@@ -51,7 +48,7 @@ namespace CJRPDF.PdfCore.Objects
                 return (Dictionary<string,PdfObject>)Value; 
             }
         }
-        public void Add(string name, PdfObject val)
+        public virtual void Add(string name, PdfObject val)
         {
             if (dictionary.ContainsKey(name))
                 dictionary[name] = val;

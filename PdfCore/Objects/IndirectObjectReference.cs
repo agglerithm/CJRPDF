@@ -4,7 +4,7 @@ namespace CJRPDF.PdfCore.Objects
 {
     public class IndirectObjectReference:PdfObject
     {
-        internal override string Print()
+        public override string Print()
         { return $"{IndirectObjectNumber} {GenerationNumber} R";  
         }
 

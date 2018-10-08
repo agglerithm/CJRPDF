@@ -4,7 +4,7 @@ namespace CJRPDF.PdfCore.Objects
 {
     public class PdfTrailerDictionary : PdfDictionary
     {
-        public PdfTrailerDictionary()
+        public PdfTrailerDictionary():base("Trailer",null)
         {
             Type = "Trailer";
         }
@@ -14,7 +14,7 @@ namespace CJRPDF.PdfCore.Objects
         public PdfDictionary Encrypt { get; set; }
         public PdfDictionary Info { get; set; }
         public PdfArray Id { get; set; }
-        internal override string Print()
+        public override string Print()
         {
             Add("Size", new PdfInteger(Size));
             if(Prev.HasValue)

@@ -5,7 +5,7 @@ namespace CJRPDF.PdfCore.Objects
 {
     public class PdfStringObject : PdfObject
     {
-        internal override string Print()
+        public override string Print()
         {
             if (!IsHex) return $"({(string) Value})";
             var sb = new StringBuilder();

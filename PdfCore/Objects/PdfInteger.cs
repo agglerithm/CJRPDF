@@ -8,7 +8,7 @@
             SetValue(num);
         }
 
-        internal override string Print()
+        public override string Print()
         {
             return $"{(int)Value}";
         }

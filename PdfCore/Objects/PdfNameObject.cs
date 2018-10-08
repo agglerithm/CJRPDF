@@ -10,12 +10,16 @@ namespace CJRPDF.PdfCore.Objects
             Value = name;
         }
 
-        internal override string Print()
+        public override string Print()
         {
             return EscapeSequences.ReverseSolidus + ReplaceSpecialCharacters(Value);
         }
 
-        private object ReplaceSpecialCharacters(object value)
+        public static string Print(string name)
+        { 
+            return EscapeSequences.ReverseSolidus + ReplaceSpecialCharacters(name);
+        }
+        private static object ReplaceSpecialCharacters(object value)
         {
             var val = (string)value;
             val = val.Replace("#", SpecialChars.Number.GetEncoding());

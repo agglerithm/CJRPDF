@@ -6,7 +6,7 @@ namespace CJRPDF.PdfCore
     public class PdfFileTrailer:PdfPrintable
     {
         private readonly List<PdfTrailerEntry> _entries = new List<PdfTrailerEntry>();
-        internal override string Print()
+        public override string Print()
         {
             var sb = new StringBuilder();
             sb.AppendLine("trailer");
@@ -36,7 +36,7 @@ namespace CJRPDF.PdfCore
 
         public string Key { get; }
         public string Value { get; }
-        internal override string Print()
+        public override string Print()
         {
             return $"{Key} {Value}\r\n";
         }

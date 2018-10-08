@@ -8,9 +8,13 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
 {
     public class PdfFontDictionary:PdfDictionary
     {
-        internal override string Print()
+        public override string Print()
         {
             return base.Print();
+        }
+
+        public PdfFontDictionary(string subtype) : base("Font", subtype)
+        {
         }
     }
 }

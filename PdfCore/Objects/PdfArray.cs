@@ -20,7 +20,7 @@ namespace CJRPDF.PdfCore.Objects
                 return (List<PdfObject>)Value;
             }
         }
-        internal override string Print()
+        public override string Print()
         {
             var sb = new StringBuilder();
             sb.Append(Delimiters.LeftSquareBracket);

@@ -10,5 +10,9 @@
         public PdfDictionary Font { get; set; }
         public PdfArray ProcSet { get; set; }
         public PdfDictionary Properties { get; set; }
+
+        public ResourceDictionary() : base("Resource", null)
+        {
+        }
     }
 }

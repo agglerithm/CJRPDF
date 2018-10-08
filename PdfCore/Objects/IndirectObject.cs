@@ -1,4 +1,5 @@
-﻿using PdfCore.Objects;
+﻿using System;
+using PdfCore.Objects;
 
 namespace CJRPDF.PdfCore.Objects
 {
@@ -16,7 +17,9 @@ namespace CJRPDF.PdfCore.Objects
         public int IndirectObjectNumber { get; set; }
         public IndirectObjectReference ObjectReference { get; set; }
         public int GenerationNumber { get; set; }
-        internal override string Print()
+        public Type ReferencedType { get { return typeof (T); } }
+
+        public override string Print()
         {
             return $"{IndirectObjectNumber} {GenerationNumber} obj \r\n {Object.Print()} \r\n endobj";
         }

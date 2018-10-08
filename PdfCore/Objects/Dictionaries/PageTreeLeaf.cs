@@ -8,7 +8,7 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
         public PageTreeLeaf():base("Page")
         { 
         }
-
+        public ResourceDictionary Resources { get; set; }
         public IndirectObject<PageTreeNode> Parent { get; set; }
         public DateTime LastModified { get; set; }
         public PdfRectangle MediaBox { get; set; }
@@ -17,7 +17,7 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
         public PdfRectangle TrimBox { get; set; }
         public PdfRectangle ArtBox { get; set; }
         public PdfDictionary BoxColorInfo { get; set; }
-        public PdfContentStream Contents { get; set; }
+        public PdfStreamDictionary Contents { get; set; }
         public int Rotate { get; set; }
         public PdfDictionary Group { get; set; }
         public int Thumb { get; set; }
