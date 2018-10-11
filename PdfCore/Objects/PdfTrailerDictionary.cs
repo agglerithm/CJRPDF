@@ -14,7 +14,7 @@ namespace CJRPDF.PdfCore.Objects
         public PdfDictionary Encrypt { get; set; }
         public PdfDictionary Info { get; set; }
         public PdfArray Id { get; set; }
-        public override string Print()
+        public override byte[] Print()
         {
             Add("Size", new PdfInteger(Size));
             if(Prev.HasValue)

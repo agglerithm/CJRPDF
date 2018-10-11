@@ -10,15 +10,33 @@ namespace CJRPDF.PdfCore
     public abstract class PdfPrintable
     {
         internal long EndOffset { get; set; }
-        public abstract string Print();
+        protected readonly BinaryWriter _writer;
+        protected readonly MemoryStream _memStr;
+
+        public PdfPrintable()
+        {
+            _memStr = new MemoryStream();
+            _writer = new BinaryWriter(_memStr);
+        }
+        public abstract byte[] Print();
 
         private byte[] GetBuffer(long offset)
         {
-            var buff = Print().StringToBuff();
+            var buff = Print();
             EndOffset = offset + buff.Length;
             return buff;
         }
 
+        protected byte[] BufferFromString(string val)
+        {
+            _writer.Write(val);
+            return FinishBuffer();
+        }
+        protected byte[] FinishBuffer()
+        {
+            _writer.Flush();
+            return _memStr.ToArray();
+        }
         public long AppendToStream(Stream strm, long offset)
         {
             var buff = GetBuffer(offset);

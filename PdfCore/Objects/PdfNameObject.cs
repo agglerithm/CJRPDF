@@ -1,4 +1,5 @@
-﻿using PdfCore.Objects;
+﻿using System.IO;
+using PdfCore.Objects;
 
 namespace CJRPDF.PdfCore.Objects
 {
@@ -10,14 +11,18 @@ namespace CJRPDF.PdfCore.Objects
             Value = name;
         }
 
-        public override string Print()
+        public override byte[] Print()
         {
-            return EscapeSequences.ReverseSolidus + ReplaceSpecialCharacters(Value);
+            return BufferFromString(EscapeSequences.ReverseSolidus + ReplaceSpecialCharacters(Value));
         }
 
-        public static string Print(string name)
-        { 
-            return EscapeSequences.ReverseSolidus + ReplaceSpecialCharacters(name);
+        public static byte[] Print(string name)
+        {
+            var memStr = new MemoryStream();
+            var writer = new BinaryWriter(memStr);
+            writer.Write(EscapeSequences.ReverseSolidus + ReplaceSpecialCharacters(name));
+            writer.Flush();
+            return memStr.ToArray();
         }
         private static object ReplaceSpecialCharacters(object value)
         {

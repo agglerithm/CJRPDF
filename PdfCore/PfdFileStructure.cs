@@ -1,4 +1,5 @@
-﻿using PdfCore;
+﻿using System.Text;
+using PdfCore;
 
 namespace CJRPDF.PdfCore
 {
@@ -13,9 +14,15 @@ namespace CJRPDF.PdfCore
         public PdfFileBody Body { get; set; }
         public PdfCrossReferenceTable CrossReferenceTable { get; set; }
         public PdfFileTrailer Trailer { get; set; }
-        public override string Print()
+        public override byte[] Print()
         {
-            throw new System.NotImplementedException();
+            _writer.Write(Header);
+            _writer.Write(Body.Print());
+            _writer.Write(Trailer.Print());
+            _writer.Write(CrossReferenceTable.Print());
+            _writer.Write("%EOF");
+
+            return FinishBuffer();
         }
     }
 }

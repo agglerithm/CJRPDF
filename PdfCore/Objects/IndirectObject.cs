@@ -19,9 +19,12 @@ namespace CJRPDF.PdfCore.Objects
         public int GenerationNumber { get; set; }
         public Type ReferencedType { get { return typeof (T); } }
 
-        public override string Print()
+        public override byte[] Print()
         {
-            return $"{IndirectObjectNumber} {GenerationNumber} obj \r\n {Object.Print()} \r\n endobj";
+            _writer.Write($"{IndirectObjectNumber} {GenerationNumber} obj \r\n");
+            _writer.Write(Object.Print());
+            _writer.Write("\r\n endobj");
+            return FinishBuffer();
         }
     }
 }

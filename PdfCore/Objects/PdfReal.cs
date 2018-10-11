@@ -1,4 +1,6 @@
-﻿namespace PdfCore.Objects
+﻿using CJRPDF.PdfCore.Objects;
+
+namespace PdfCore.Objects
 {
     public class PdfReal : PdfObject
     {
@@ -6,9 +8,10 @@
         {
             SetValue(num);
         }
-        public override string Print()
+        public override byte[] Print()
         {
-            return $"{(float) Value}";
+            _writer.Write($"{(float) Value}");
+            return FinishBuffer();
         }
         public void SetValue(float num)
         {

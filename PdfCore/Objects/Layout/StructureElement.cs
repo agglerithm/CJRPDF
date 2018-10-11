@@ -19,7 +19,7 @@ namespace CJRPDF.PdfCore.Objects.Layout
         public string SpaceAfter { get; set; }
         public string StartIndent { get; set; }
         public string EndIndent { get; set; }
-        public override string Print()
+        public override byte[] Print()
         {
             throw new NotImplementedException();
         }

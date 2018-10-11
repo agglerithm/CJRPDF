@@ -21,7 +21,7 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
                 throw new PdfInvalidAssignmentException(obj.ReferencedType); 
         }
 
-        public override string Print()
+        public override byte[] Print()
         {
             Add("Extends",Extends);
             Add("N", new PdfInteger(ObjectCount));

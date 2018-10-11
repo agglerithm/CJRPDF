@@ -6,17 +6,16 @@ namespace CJRPDF.PdfCore
     public class PdfFileTrailer:PdfPrintable
     {
         private readonly List<PdfTrailerEntry> _entries = new List<PdfTrailerEntry>();
-        public override string Print()
-        {
-            var sb = new StringBuilder();
-            sb.AppendLine("trailer");
-            sb.Append("<<");
-            sb.Append(_entries.PrintAll());
-            sb.Append(">>");
-            sb.AppendLine("startxref");
-            sb.AppendLine(XrefOffset.ToString());
-            sb.AppendLine("%%EOF");
-            return sb.ToString();
+        public override byte[] Print()
+        { 
+            _writer.Write("trailer\r\n");
+            _writer.Write("<<\r\n");
+            _writer.Write(_entries.PrintAll());
+            _writer.Write(">>\r\n");
+            _writer.Write("startxref\r\n");
+            _writer.Write(XrefOffset.ToString());
+            _writer.Write("\r\n%%EOF");
+            return FinishBuffer();
         }
 
         public void AddEntry(string key, string value)
@@ -36,9 +35,9 @@ namespace CJRPDF.PdfCore
 
         public string Key { get; }
         public string Value { get; }
-        public override string Print()
+        public override byte[] Print()
         {
-            return $"{Key} {Value}\r\n";
+            return BufferFromString($"{Key} {Value}\r\n");
         }
     }
 }

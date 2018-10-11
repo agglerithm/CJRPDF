@@ -35,7 +35,7 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
             Length = new IndirectObject<PdfInteger>(new PdfInteger(Buffer.Length), 0,0);
             return Length;
         }
-        public override string Print()
+        public override byte[] Print()
         { 
             if(Length == null)
                 throw new Exception("Length reference cannot be null!");

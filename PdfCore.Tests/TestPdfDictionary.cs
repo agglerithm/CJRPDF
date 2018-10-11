@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using CJRPDF.PdfCore.Objects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -30,7 +31,7 @@ namespace PdfCore.Tests
 
         private void PrintDictionary()
         {
-            _result = _dictionary.Print();
+            _result = Encoding.ASCII.GetString(_dictionary.Print());
         }
 
         private void WhenDictionaryIsCreated()

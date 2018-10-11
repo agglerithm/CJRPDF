@@ -20,17 +20,16 @@ namespace CJRPDF.PdfCore.Objects
                 return (List<PdfObject>)Value;
             }
         }
-        public override string Print()
-        {
-            var sb = new StringBuilder();
-            sb.Append(Delimiters.LeftSquareBracket);
+        public override byte[] Print()
+        { 
+            _writer.Write(Delimiters.LeftSquareBracket);
             foreach (var obj in list)
             {
-                sb.Append($"{obj.Print()} ");
+                _writer.Write($"{obj.Print()} ");
             }
 
-            sb.Append(Delimiters.RightSquareBracket);
-            return sb.ToString();
+            _writer.Write(Delimiters.RightSquareBracket);
+            return FinishBuffer();
 
         }
     }

@@ -9,7 +9,7 @@ namespace CJRPDF.PdfCore.Objects
     public class PdfObjectStream:PdfPrintable
     {
         private readonly List<IndirectObjectReference> _list = new List<IndirectObjectReference>();
-        public override string Print()
+        public override byte[] Print()
         {
             return _list.PrintAll();
         }

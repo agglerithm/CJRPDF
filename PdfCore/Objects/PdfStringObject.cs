@@ -5,19 +5,18 @@ namespace CJRPDF.PdfCore.Objects
 {
     public class PdfStringObject : PdfObject
     {
-        public override string Print()
+        public override byte[] Print()
         {
-            if (!IsHex) return $"({(string) Value})";
-            var sb = new StringBuilder();
-            sb.Append(Delimiters.LessThan);
+            if (!IsHex) return BufferFromString($"({(string) Value})"); 
+            _writer.Write(Delimiters.LessThan);
             var val = (byte[]) Value;
             foreach (var b in val)
             {
-                sb.Append(b.ToString("X"));
+                _writer.Write(b.ToString("X"));
             }
 
-            sb.Append(Delimiters.GreaterThan);
-            return sb.ToString(); 
+            _writer.Write(Delimiters.GreaterThan);
+            return FinishBuffer(); 
         }
 
         public bool IsHex { get; set; }

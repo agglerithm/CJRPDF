@@ -1,6 +1,4 @@
-﻿using CJRPDF.PdfCore;
-
-namespace PdfCore.Objects
+﻿namespace CJRPDF.PdfCore.Objects
 {   
     public enum PdfObjectType { Boolean, Integer, Real, String, Name, Array, Dictionary, Stream, Null }
     //Basic components of a PDF document

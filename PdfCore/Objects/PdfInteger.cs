@@ -1,4 +1,6 @@
-﻿namespace PdfCore.Objects
+﻿using CJRPDF.PdfCore.Objects;
+
+namespace PdfCore.Objects
 {
     public class PdfInteger : PdfObject
     { 
@@ -8,9 +10,10 @@
             SetValue(num);
         }
 
-        public override string Print()
+        public override byte[] Print()
         {
-            return $"{(int)Value}";
+            _writer.Write($"{(int)Value}");
+            return FinishBuffer();
         }
 
         public void SetValue(int num)

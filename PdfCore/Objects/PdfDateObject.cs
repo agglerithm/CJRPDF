@@ -9,9 +9,9 @@ namespace CJRPDF.PdfCore.Objects
 {
     public class PdfDateObject:PdfObject
     {
-        public override string Print()
+        public override byte[] Print()
         {
-            return $"(D:{GetDate()}+00'00'";
+            return BufferFromString($"(D:{GetDate()}+00'00'"); 
         }
 
         private string GetDate()

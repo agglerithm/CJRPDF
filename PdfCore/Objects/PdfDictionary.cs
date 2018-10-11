@@ -17,27 +17,26 @@ namespace CJRPDF.PdfCore.Objects
             Type = type;
             Subtype = subtype; 
         }
-        public override string Print()
+        public override byte[] Print()
         {
-            var sb = new StringBuilder();
-            sb.AppendLine("<<"); 
-            AddName(sb, "Type", Type); 
-            AddName(sb, "Subtype", Subtype);
+            _writer.Write("<<"); 
+            AddName("Type", Type); 
+            AddName("Subtype", Subtype);
             foreach (var key in dictionary.Keys)
             {
-                sb.Append(new PdfNameObject(key).Print());
-                sb.AppendLine(dictionary[key].Print());
+                _writer.Write(new PdfNameObject(key).Print());
+                _writer.Write(dictionary[key].Print());
             }
 
-            sb.AppendLine(">>");
-            return sb.ToString();
+            _writer.Write(">>");
+            return FinishBuffer();
         }
 
-        private void AddName(StringBuilder sb, string name, string val)
+        private void AddName(string name, string val)
         {
             if (name == null || val == null) return; 
-            sb.Append(PdfNameObject.Print(name)); 
-            sb.AppendLine(PdfNameObject.Print(val));
+            _writer.Write(PdfNameObject.Print(name)); 
+            _writer.Write(PdfNameObject.Print(val));
         }
 
         public string Type { get; set; }

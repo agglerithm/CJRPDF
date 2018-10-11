@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,14 +10,16 @@ namespace CJRPDF.PdfCore
 {
     public static class PdfObjectExtensions
     {
-        public static string PrintAll<T>(this IEnumerable<T> lst) where T : PdfPrintable
+        public static byte[] PrintAll<T>(this IEnumerable<T> lst) where T : PdfPrintable
         {
-            var sb = new StringBuilder();
+            var memStr = new MemoryStream();
+            var writer = new BinaryWriter(memStr);
             foreach (var obj in lst)
             {
-                sb.Append(obj.Print());
+                writer.Write(obj.Print());
             }
-            return sb.ToString();
+            writer.Flush();
+            return memStr.ToArray();
         }
     }
 }

@@ -12,20 +12,19 @@ namespace CJRPDF.PdfCore
             Numbers = new List<int>();
         }
         public List<int> Numbers { get; set; }
-        public override string Print()
+        public override byte[] Print()
         {
             if (!Numbers.Any())
                 return null;
             if (Numbers.Count == 1)
-                return Numbers.First().ToString();
-            var sb = new StringBuilder();
-            sb.Append("[");
+                return BufferFromString(Numbers.First().ToString()); 
+            _writer.Write("[");
             foreach (var num in Numbers)
             {
-                sb.Append($"{num} ");
+                _writer.Write($"{num} ");
             }
-            sb.AppendLine("]");
-            return sb.ToString();
+            _writer.Write("]");
+            return FinishBuffer();
         }
     }
 }
