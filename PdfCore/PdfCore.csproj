@@ -74,6 +74,10 @@
     <Compile Include="Objects\IndirectObjectReference.cs" />
     <Compile Include="Objects\Layout\PdfColumnCollection.cs" />
     <Compile Include="Objects\Layout\PdfTable.cs" />
+    <Compile Include="Operations\GraphicsOperation.cs" />
+    <Compile Include="Operations\PdfOperation.cs" />
+    <Compile Include="Operations\PdfChildOperation.cs" />
+    <Compile Include="Operations\TextOperation.cs" />
     <Compile Include="PdfColor.cs" />
     <Compile Include="Objects\Layout\StructureElement.cs" />
     <Compile Include="Objects\PdfArray.cs" />
@@ -98,6 +102,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\FlateDecode.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

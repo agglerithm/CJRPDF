@@ -10,12 +10,12 @@ namespace CJRPDF.PdfCore.Utilities
 {
     static class FlateDecode
     {
-        public static byte[] DeflateString(string str)
+        public static byte[] DeflateString(this string str)
         {
             return DeflateString(ASCIIEncoding.ASCII.GetBytes(str));
         }
 
-        public static byte[] DeflateString(byte[] buffer)
+        public static byte[] DeflateString(this byte[] buffer)
         {
             byte[] compressed = null;
             var strm = new MemoryStream();

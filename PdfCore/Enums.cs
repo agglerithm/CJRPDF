@@ -16,6 +16,7 @@
     public enum LineCapStyle { Butt, Round, ProjectingSquare}
     public enum LineJointStyle { Miter, Round, Bevel }
     public enum MatrixTypes { Translations, Scaling, Rotations, Skew }
+    public enum ColorSpace { Pattern, Separation, DeviceRGB, CalRGB, DeviceCmyk, DeviceGray, Indexed, Lab}
     public static class Delimiters
     {
         public const string LeftParenthesis = "(";

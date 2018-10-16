@@ -6,7 +6,7 @@ namespace CJRPDF.PdfCore.Objects
     {
         public override byte[] Print()
         {
-            return BufferFromString($"{IndirectObjectNumber} {GenerationNumber} R");  
+            return BufferFromString($"{IndirectObjectNumber} {GenerationNumber} R\r\n");  
         }
 
         public int GenerationNumber { get; set; }

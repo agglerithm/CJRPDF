@@ -31,10 +31,11 @@ namespace CJRPDF.PdfCore.Objects.Dictionaries
         public IndirectObject<PdfInteger> SetData(byte[] data)
         {
             DefilteredLength = data.Length;
-            Value = FlateDecode.DeflateString(data);
+            Value = data.DeflateString();
             Length = new IndirectObject<PdfInteger>(new PdfInteger(Buffer.Length), 0,0);
             return Length;
         }
+
         public override byte[] Print()
         { 
             if(Length == null)
