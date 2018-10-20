@@ -39,7 +39,7 @@ namespace CJRPDF.PdfCore
         }
         public override byte[] Print()
         {
-            _writer.Write($"xref\r\n");
+            _writer.Write($"xref{EscapeSequences.CRLF}");
             _writer.Write(_subSections.PrintAll());
             return FinishBuffer();
         }
@@ -86,7 +86,7 @@ namespace CJRPDF.PdfCore
 
         public override byte[] Print()
         {
-            return BufferFromString($"{ByteOffset.ToString("#########")} {GenerationNumber.ToString("#####")} {InUseKeyword} \r\n");
+            return BufferFromString($"{ByteOffset.ToString("#########")} {GenerationNumber.ToString("#####")} {InUseKeyword} {EscapeSequences.CRLF}");
         }
     }
 }

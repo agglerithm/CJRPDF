@@ -21,9 +21,9 @@ namespace CJRPDF.PdfCore.Objects
 
         public override byte[] Print()
         {
-            _writer.Write($"{IndirectObjectNumber} {GenerationNumber} obj \r\n");
+            _writer.Write($"{IndirectObjectNumber} {GenerationNumber} obj {EscapeSequences.CRLF}");
             _writer.Write(Object.Print());
-            _writer.Write("\r\n endobj");
+            _writer.Write($"{EscapeSequences.CRLF} endobj");
             return FinishBuffer();
         }
     }

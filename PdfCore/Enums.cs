@@ -34,6 +34,7 @@
     {
         public const string LineFeed = "\\n";
         public const string CarriageReturn = "\\r";
+        public const string CRLF = "\\r\\n";
         public const string HorizontalTab = "\\t";
         public const string Backspace = "\\b";
         public const string FormFeed = "\\f";

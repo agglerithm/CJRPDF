@@ -8,13 +8,13 @@ namespace CJRPDF.PdfCore
         private readonly List<PdfTrailerEntry> _entries = new List<PdfTrailerEntry>();
         public override byte[] Print()
         { 
-            _writer.Write("trailer\r\n");
-            _writer.Write("<<\r\n");
+            _writer.Write($"trailer{EscapeSequences.CRLF}");
+            _writer.Write($"<<{EscapeSequences.CRLF}");
             _writer.Write(_entries.PrintAll());
-            _writer.Write(">>\r\n");
-            _writer.Write("startxref\r\n");
+            _writer.Write($">>{EscapeSequences.CRLF}");
+            _writer.Write($"startxref{EscapeSequences.CRLF}");
             _writer.Write(XrefOffset.ToString());
-            _writer.Write("\r\n%%EOF");
+            _writer.Write($"{EscapeSequences.CRLF}%%EOF");
             return FinishBuffer();
         }
 
@@ -37,7 +37,7 @@ namespace CJRPDF.PdfCore
         public string Value { get; }
         public override byte[] Print()
         {
-            return BufferFromString($"{Key} {Value}\r\n");
+            return BufferFromString($"{Key} {Value}{EscapeSequences.CRLF}");
         }
     }
 }
