@@ -93,6 +93,7 @@
     <Compile Include="PdfCrossReferenceStream.cs" />
     <Compile Include="PdfCrossReferenceTable.cs" />
     <Compile Include="PdfDocumentStructure.cs" />
+    <Compile Include="PdfFile.cs" />
     <Compile Include="PdfFileBody.cs" />
     <Compile Include="PdfFileTrailer.cs" />
     <Compile Include="PdfObjectExtensions.cs" />
@@ -102,7 +103,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\FlateDecode.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CJR.Images.Core\CJR.Images.Core.csproj">
+      <Project>{80abe21a-80ff-44b6-9674-368bb0eac6dc}</Project>
+      <Name>CJR.Images.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ImagesCore;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CJRPDF.PdfCore
 {
-    public abstract class PdfPrintable
+    public abstract class PdfPrintable:PrintableData
     {
         internal long EndOffset { get; set; }
         protected readonly BinaryWriter _writer;
@@ -17,8 +18,7 @@ namespace CJRPDF.PdfCore
         {
             _memStr = new MemoryStream();
             _writer = new BinaryWriter(_memStr);
-        }
-        public abstract byte[] Print();
+        } 
 
         private byte[] GetBuffer(long offset)
         {

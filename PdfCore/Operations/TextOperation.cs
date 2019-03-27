@@ -8,7 +8,7 @@ namespace CJRPDF.PdfCore.Operations
         {
         }
 
-        public PdfOperation GetBlock(Func<PdfOperation> func)
+        public override PdfOperation GetBlock(Func<PdfOperation> func)
         {
             var op = BeginText().Invoke(func) as TextOperation;
             return op.EndText();

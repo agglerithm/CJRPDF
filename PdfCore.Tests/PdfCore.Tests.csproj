@@ -58,6 +58,10 @@
     <Compile Include="GetDeflatedText.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CJR.Images.Core\CJR.Images.Core.csproj">
+      <Project>{80ABE21A-80FF-44B6-9674-368BB0EAC6DC}</Project>
+      <Name>CJR.Images.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PdfCore\PdfCore.csproj">
       <Project>{1D4F617A-71F2-4F50-823E-BA24105BEFE0}</Project>
       <Name>PdfCore</Name>

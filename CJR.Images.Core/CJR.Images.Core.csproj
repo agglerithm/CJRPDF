@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ByteArrayExtensions.cs" />
+    <Compile Include="ImageRectangle.cs" />
     <Compile Include="PrintableData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
