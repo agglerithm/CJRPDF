@@ -24,9 +24,9 @@ namespace CJR.Images.GIF.Layout
 
     public class GifImageAndColorTableInfo : PrintableData
     {
-        public byte LocalColorTable { get; set; }
-        public byte Interlaced { get; set; }
-        public byte Sort { get; set; }
+        public bool LocalColorTable { get; set; }
+        public bool Interlaced { get; set; }
+        public bool Sort { get; set; }
         public int SizeOfLocalColorTable { get; set; }
         public override byte[] Print()
         {

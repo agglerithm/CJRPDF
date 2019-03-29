@@ -11,6 +11,15 @@ namespace ImagesCore
             return Encoding.ASCII.GetBytes(text);
         }
 
+        public static byte[] GetBytes(this UInt16 num)
+        {
+            return BitConverter.GetBytes(num);
+        }
+
+        public static byte[] GetBytes(this byte num)
+        {
+            return new byte[] {num};
+        }
         public static byte[] Concatenate(this byte[] arr, params byte[][] arrs)
         {
             var len = arr.Length + arrs.Sum(a => a.Length);

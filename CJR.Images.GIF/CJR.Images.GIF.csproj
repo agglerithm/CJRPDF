@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Layout\ApplicationExtension.cs" />
+    <Compile Include="Layout\CommentExtension.cs" />
     <Compile Include="Layout\GifExtension.cs" />
     <Compile Include="Layout\GifFile.cs" />
     <Compile Include="Layout\GifHeader.cs" />
@@ -50,6 +52,8 @@
     <Compile Include="Layout\GifScreenAndColorMapInfo.cs" />
     <Compile Include="Layout\GifColorTable.cs" />
     <Compile Include="Layout\GifTrailer.cs" />
+    <Compile Include="Layout\GraphicsControlExtension.cs" />
+    <Compile Include="Layout\PlainTextExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
