@@ -1,4 +1,5 @@
-﻿using ImagesCore;
+﻿using CJR.Images.Core;
+using ImagesCore;
 
 namespace CJR.Images.GIF.Layout
 {

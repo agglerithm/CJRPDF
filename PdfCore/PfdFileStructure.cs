@@ -1,10 +1,15 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using PdfCore;
 
 namespace CJRPDF.PdfCore
 {
+    public interface IPdfReadable
+    {
+        PdfFile Read(Stream strm);
+    }
     //Determines how objects are stored, accessed, and updated in a PDF file
-    public class PdfFileStructure:PdfPrintable
+    public class PdfFileStructure:PdfPrintable, IPdfReadable
     {
         public PdfFileStructure()
         {

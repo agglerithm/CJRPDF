@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CJR.Images.Core;
 using ImagesCore;
 
 namespace CJR.Images.GIF.Layout
