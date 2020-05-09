@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocoToPdfReport", "PocoToPdfReport\PocoToPdfReport.csproj", "{9050DF2F-18B0-4A2C-ACB2-2CE04C15D071}"
 EndProject
@@ -12,6 +12,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJR.Images.Core", "CJR.Images.Core\CJR.Images.Core.csproj", "{80ABE21A-80FF-44B6-9674-368BB0EAC6DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJR.Images.GIF", "CJR.Images.GIF\CJR.Images.GIF.csproj", "{DE20751A-52C7-4C31-B67C-CC0B50762A99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJR.PDF.Read.Scanner", "CJR.PDF.Scanner\CJR.PDF.Read.Scanner.csproj", "{CC30DD53-A323-46A6-A9AA-35B8838213C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJR.PDF.Read.Domain", "CJR.PDF.Parser.Domain\CJR.PDF.Read.Domain.csproj", "{BA211603-55A8-4C84-82FA-432A6F51BA9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CJR.PDF.Read.Parser", "CJR.PDF.Parser\CJR.PDF.Read.Parser.csproj", "{A6A3BAA7-113A-4852-81B2-0A074686649F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CJR.PDF.Read", "CJR.PDF.Read", "{1457EC0A-40F8-48A4-87F1-6639429CBF75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CJR.PDF.Write", "CJR.PDF.Write", "{0DCCDC27-0CDE-4FA1-936A-11B252CAE11E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +49,26 @@ Global
 		{DE20751A-52C7-4C31-B67C-CC0B50762A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE20751A-52C7-4C31-B67C-CC0B50762A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE20751A-52C7-4C31-B67C-CC0B50762A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC30DD53-A323-46A6-A9AA-35B8838213C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC30DD53-A323-46A6-A9AA-35B8838213C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC30DD53-A323-46A6-A9AA-35B8838213C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC30DD53-A323-46A6-A9AA-35B8838213C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA211603-55A8-4C84-82FA-432A6F51BA9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA211603-55A8-4C84-82FA-432A6F51BA9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA211603-55A8-4C84-82FA-432A6F51BA9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA211603-55A8-4C84-82FA-432A6F51BA9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A3BAA7-113A-4852-81B2-0A074686649F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A3BAA7-113A-4852-81B2-0A074686649F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A3BAA7-113A-4852-81B2-0A074686649F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A3BAA7-113A-4852-81B2-0A074686649F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CC30DD53-A323-46A6-A9AA-35B8838213C6} = {1457EC0A-40F8-48A4-87F1-6639429CBF75}
+		{BA211603-55A8-4C84-82FA-432A6F51BA9E} = {1457EC0A-40F8-48A4-87F1-6639429CBF75}
+		{A6A3BAA7-113A-4852-81B2-0A074686649F} = {1457EC0A-40F8-48A4-87F1-6639429CBF75}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF28063C-5F6F-48EA-A3ED-9D4C6D212A0E}
